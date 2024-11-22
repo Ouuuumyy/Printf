@@ -1,5 +1,16 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukadir <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/22 12:30:27 by oukadir           #+#    #+#             */
+/*   Updated: 2024/11/22 12:30:35 by oukadir          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libftprintf.h"
+
 int ft_printf(char *s, ...)
 {
     va_list args;
@@ -24,33 +35,28 @@ int ft_printf(char *s, ...)
             if(s[i + 1] == 'X')
                 count+=ft_puthex(va_arg(args, int), 1);
             if(s[i + 1] == 's')
-            {
-                char *str = va_arg(args, char *);
-                if(!str)
-                    str = "(null)";
-                count+=ft_putstr(str);
-            }  
+                count+=ft_putstr(va_arg(args, char *));
             if(s[i + 1] == 'u')
                 count+=ft_putunsign(va_arg(args, unsigned int));
             else
+            {
                 i++;
-            i++;
+                while(s[i + 1] == ' ')
+                    i++;       
+            }
+                
         }
         else
-        {
-            ft_putchar(s[i]);
-            i++;
-        }
-       
+            count += ft_putchar(s[i]);
+        i++;   
     }
-
     va_end(args);
-    return 0;
+    return count;
 }
 
 int main()
 {
-    ft_printf("%zksksj\n");
-    printf("%z  ksksj\n");
+    ft_printf("%%%'      ]zksksj\n");
+    printf("%%%'      ]zksksj\n");
 
 }

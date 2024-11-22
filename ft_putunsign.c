@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunsign.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oukadir <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/22 12:33:25 by oukadir           #+#    #+#             */
+/*   Updated: 2024/11/22 12:33:30 by oukadir          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libftprintf.h"
 
 int ft_putunsign(unsigned int n)
@@ -12,8 +23,7 @@ int ft_putunsign(unsigned int n)
     }
     c = n % 10 + '0';
     write(1, &c, 1);
-    count++;
-    return count;
+    return (count + 1);
 }
 
 // int main()
