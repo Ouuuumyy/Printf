@@ -4,7 +4,8 @@ SRC = ft_putchar.c\
 	ft_putstr.c\
 	ft_puthex.c\
 	ft_putnbr.c\
-	ft_putunsign.c
+	ft_putunsign.c\
+	ft_putadress.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -11,26 +11,20 @@
 /* ************************************************************************** */
 #include "libftprintf.h"
 
-int ft_putstr(char *c)
+int	ft_putstr(char *c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if(!c)
-    {
-        write(1, "(null)", 6);
-        return (6);
-    }
-    while(c[i] != '\0')
-    {
-        write(1, &c[i], 1);
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (!c)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (c[i] != '\0')
+	{
+		write(1, &c[i], 1);
+		i++;
+	}
+	return (i);
 }
-/*
-int main()
-{
-    printf("\n%d", ft_putstr("hello"));
-}
-*/

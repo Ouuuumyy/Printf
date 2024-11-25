@@ -10,4 +10,5 @@ int ft_putchar(char c);
 int ft_puthex(unsigned int n, int uppercase);
 int ft_putunsign(unsigned int n);
 int ft_printf(char *s, ...);
+int ft_putadress(void *ptr);
 #endif
