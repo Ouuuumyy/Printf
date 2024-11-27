@@ -9,8 +9,7 @@
 /*   Updated: 2024/11/22 12:33:30 by oukadir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
-# include <stdio.h>
+#include "ft_printf.h"
 
 int	ft_putunsign(unsigned int n)
 {
@@ -26,4 +25,3 @@ int	ft_putunsign(unsigned int n)
 	write(1, &c, 1);
 	return (count + 1);
 }
- 

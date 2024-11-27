@@ -9,7 +9,7 @@
 /*   Updated: 2024/11/22 12:31:07 by oukadir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {

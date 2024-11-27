@@ -9,20 +9,14 @@
 /*   Updated: 2024/11/22 12:30:35 by oukadir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
 int	compare_specifier(char c, va_list args)
 {
 	int	count;
 
 	count = 0;
-	if (c == '\0')
-	{
-		ft_putstr("");
-		return (-1);
-	}
-	else if (c == '%')
+	if (c == '%')
 		count += ft_putchar('%');
 	else if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
@@ -40,34 +34,28 @@ int	compare_specifier(char c, va_list args)
 		count += ft_putadress(va_arg(args, void *));
 	else if (c == 'u')
 		count += ft_putunsign(va_arg(args, unsigned int));
-	else
-		return (-2);
 	return (count);
 }
-int	ft_printf(char *s, ...)
+
+int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		i;
 	int		count;
-	int		res;
 
 	i = 0;
 	count = 0;
-	res = 0;
 	va_start(args, s);
 	while (s[i])
 	{
 		if (s[i] == '%')
 		{
-			res = compare_specifier(s[i + 1], args);
-			if (res == -2)
+			if (s[i + 1] == '\0')
 			{
-				i++;
-				while (s[i + 1] == ' ')
-					i++;
+				ft_putstr("");
+				return (-1);
 			}
-			else
-				count += res;
+			count += compare_specifier(s[i + 1], args);
 			i++;
 		}
 		else
@@ -76,14 +64,4 @@ int	ft_printf(char *s, ...)
 	}
 	va_end(args);
 	return (count);
-}
-
-int	main(void)
-{
-	int	n;
-
-	
-	ft_printf("%");
-	printf("%");
-	
 }

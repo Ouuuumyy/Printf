@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oukadir <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 12:32:48 by oukadir           #+#    #+#             */
-/*   Updated: 2024/11/22 12:32:55 by oukadir          ###   ########.fr       */
+/*   Created: 2024/11/26 14:36:15 by oukadir           #+#    #+#             */
+/*   Updated: 2024/11/26 14:36:30 by oukadir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_putstr(char *c)
-{
-	int	i;
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-	i = 0;
-	if (!c)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (c[i] != '\0')
-	{
-		write(1, &c[i], 1);
-		i++;
-	}
-	return (i);
-}
+int	ft_putnbr(int i);
+int	ft_putstr(char *c);
+int	ft_putchar(char c);
+int	ft_puthex(unsigned int n, int uppercase);
+int	ft_putunsign(unsigned int n);
+int	ft_printf(const char *s, ...);
+int	ft_putadress(void *ptr);
+#endif

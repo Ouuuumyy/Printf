@@ -9,9 +9,7 @@
 /*   Updated: 2024/11/22 12:31:36 by oukadir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libftprintf.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "ft_printf.h"
 
 static char	*convert_hex(unsigned int n, int uppercase)
 {

@@ -1,4 +1,4 @@
-NAME = Libftprintf.a
+NAME = libftprintf.a
 
 SRC = ft_putchar.c\
 	ft_putstr.c\
@@ -8,13 +8,13 @@ SRC = ft_putchar.c\
 	ft_putadress.c
 
 OBJ = $(SRC:.c=.o)
-
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra -c
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	cc $(CFLAGS) $(SRC)
+	$(CC) $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJ)
 
 clean:
