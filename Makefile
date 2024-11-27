@@ -5,7 +5,8 @@ SRC = ft_putchar.c\
 	ft_puthex.c\
 	ft_putnbr.c\
 	ft_putunsign.c\
-	ft_putadress.c
+	ft_putadress.c\
+	ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
